@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/furkan/.config/kitty'
+let g:netrw_dirhist_2='/home/furkan/.config/wlogout'
+let g:netrw_dirhist_1='/home/furkan/.config/MangoHud'
