@@ -14,6 +14,8 @@
   "lazy.nvim": { "branch": "main", "commit": "cf8ecc2c5e4332760431a33534240b0cbc6680ab" },
   "markdown.nvim": { "branch": "master", "commit": "dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
+  "menu": { "branch": "main", "commit": "ee85b2e394fde354bd24e35ff7a688d10c9212fa" },
+  "minty": { "branch": "main", "commit": "157e91c04cce2f01643519338d6b854275a77547" },
   "nvim-autopairs": { "branch": "master", "commit": "ee297f215e95a60b01fde33275cc3c820eddeebe" },
   "nvim-cmp": { "branch": "main", "commit": "29fb4854573355792df9e156cb779f0d31308796" },
   "nvim-lspconfig": { "branch": "master", "commit": "831892d15cb06b4f03d68ebc5c7a03a1bb7dc931" },
@@ -26,5 +28,6 @@
   "typewriter": { "branch": "main", "commit": "8842e1a9b50085c14ef647987463a780c0267e2a" },
   "ui": { "branch": "v2.5", "commit": "e0f06a9aa43112e94beca8283516e6804112fb8e" },
   "vim-markdown": { "branch": "master", "commit": "8f6cb3a6ca4e3b6bcda0730145a0b700f3481b51" },
+  "volt": { "branch": "main", "commit": "229b4f1bc865c866227dd0e2ecda11ab6ec2c8cc" },
   "which-key.nvim": { "branch": "main", "commit": "8badb359f7ab8711e2575ef75dfe6fbbd87e4821" }
 }
