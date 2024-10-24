@@ -12,16 +12,16 @@ final_space = true
     powerline_symbol = ''
     leading_diamond = ''
     template = '{{.Icon}} '
-    background = 'p:blue'
-    foreground = 'p:wight'
+    background = 'p:red'
+    foreground = 'p:base'
 
   [[blocks.segments]]
     type = 'session'
     style = 'diamond'
     powerline_symbol = ''
-    template = '{{ .UserName }}@{{ .HostName }}'
-    background = 'p:blue'
-    foreground = 'p:text'
+    template = '<b>{{ .UserName }}@{{ .HostName }}</b>'
+    background = 'p:red'
+    foreground = 'p:base'
 
   [[blocks.segments]]
     type = 'path'
@@ -29,7 +29,7 @@ final_space = true
     powerline_symbol = ''
     template = ' {{ .Path }}'
     background = 'p:pink'
-    foreground = 'p:text'
+    foreground = 'p:base'
 
     [blocks.segments.properties]
       folder_icon = '....'
@@ -42,7 +42,7 @@ final_space = true
     powerline_symbol = ''
     template = ' {{ .HEAD }}'
     background = 'p:lavender'
-    foreground = 'p:text'
+    foreground = 'p:base'
 
     [blocks.segments.properties]
       branch_icon = ' '
@@ -56,25 +56,62 @@ final_space = true
       revert_icon = ' '
       tag_icon = ' '
 
+    
 [[blocks]]
     type = 'prompt'
     alignment = 'right'
     overflow = 'hidden'
 
     [[blocks.segments]]
-        type = 'executiontime'
-        style = 'plain'
-        foreground = 'yellow'
-        background = 'transparent'
-        template = '{{ div .Ms 1000 }}s'
+        type = "executiontime"
+        style = "powerline"
+        powerline_symbol = ""
+        foreground = "p:yellow"
+        background = "transparent"
+        template = "{{ .FormattedMs }}"
+        
+        [block.properties]
+            threshold = 500
+            style = "austin"
+            always_enabled = true
 
-        [blocks.segments.properties]
-            threshold = 5000
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
+
+    [[blocks.segments]]
+        type = 'text'
+        style = 'plain'
+        foreground = 'p:maroon'
+        template = '> '
 
 [palette]
-  blue = '#8AADF4'
-  lavender = '#B7BDF8'
-  os = '#ACB0BE'
-  pink = '#F5BDE6'
-  text = '#494D64'
-  wight = '#FFFFFF'
+  rosewater = '#f5e0dc'
+  flamingo = '#f2cdcd'
+  pink = '#f5c2e7'
+  mauve = '#cba6f7'
+  red = '#f38ba8'
+  maroon = '#eba0ac'
+  peach = '#fab387'
+  yellow = '#f9e2af'
+  green = '#a6e3a1'
+  teal = '#94e2d5'
+  sky = '#89dceb'
+  sapphire = '#74c7ec'
+  blue = '#89b4fa'
+  lavender = '#b4befe'
+  text = '#cdd6f4'
+  subtext1 = '#bac2de'
+  subtext0 = '#a6adc8'
+  overlay2 = '#9399b2'
+  overlay1 = '#7f849c'
+  overlay0 = '#6c7086'
+  surface2 = '#585b70'
+  surface1 = '#45475a'
+  surface0 = '#313244'
+  base = '#1e1e2e'
+  mantle = '#181825'
+  crust = '#11111b'
+  
+ 
