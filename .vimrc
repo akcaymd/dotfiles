@@ -14,7 +14,7 @@ filetype indent on
 syntax on
 
 " Add numbers to each line on the left-hand side.
-set number
+set number relativenumber
 
 " Set shift width to 4 spaces.
 set shiftwidth=4
@@ -30,7 +30,6 @@ set smartindent
 set expandtab 
 set smarttab
 set softtabstop=4
-
 
 " Do not save backup files.
 set nobackup

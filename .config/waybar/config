@@ -6,11 +6,9 @@
         "hyprland/workspaces",
         "hyprland/mode",
         "hyprland/window",
-        "custom/media",
     ],
     "modules-center": [
-        "clock",
-        "custom/weather",
+        "custom/media",
     ],
     "modules-right": [
         "network#netspeed",
@@ -27,6 +25,8 @@
         "bluetooth",
         "network",
         "battery",
+        "clock",
+        "custom/weather",
     ],
     "hyprland/window": {
         "format": "{title}",
@@ -44,7 +44,7 @@
         ]
     },
     "clock": {
-        "format": "{:%d %b %a | %H:%M}",
+        "format": "  {:%H:%M}",
         //"format": "{:%H:%M}",
         "format-alt": "{:%d %B %Y  %A |  %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -90,14 +90,24 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": " mute",
         "format-icons": {
             "default": [
-                "",
-                "",
-                ""
-            ]
+                " ",
+                " ",
+                " "
+            ],
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "phone-muted": " ",
+            "portable": " ",
         },
+        "scroll-step": 1,
+        "on-click": "amixer set Master toggle",
+        //"on-click": "pavucontrol",
     },
     "hyprland/workspaces": {
         "on-click": "activate",

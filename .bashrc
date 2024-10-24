@@ -23,3 +23,5 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin.omp.toml)"
