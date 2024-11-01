@@ -117,12 +117,12 @@
         "persistent-workspaces": {
             "eDP-1": [
                 1,
-                3
+                2
             ],
             "HDMI-A-1": [
-                2,
+                3,
                 4
-            ]
+           ]
         }
     },
     "tray": {

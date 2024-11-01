@@ -13,17 +13,17 @@ return {
     end,
   },
 
-{
-	"nvim-treesitter/nvim-treesitter",
-    build = ':TSUpdate',
-	opts = {
-		ensure_installed = {
-			"vim", "lua", "vimdoc",
-     "html", "css"
-		},
-	},
-},
-
+  {
+  	"nvim-treesitter/nvim-treesitter",
+      build = ':TSUpdate',
+  	opts = {
+  		ensure_installed = {
+  			"vim", "lua", "vimdoc",
+       "html", "css"
+  		},
+  	},
+  },
+  
     {
         'joshuadanpeterson/typewriter',
         lazy = false,
@@ -35,7 +35,21 @@ return {
         end,
         opts = {}
     },
-
-
-
+    {
+        'godlygeek/tabular',
+    },
+    {
+        'preservim/vim-markdown',
+        lazy = false
+    },
+    {
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true, -- or `opts = {}`,
+        lazy = false
+    },
+    {
+        'ThePrimeagen/vim-be-good',
+        lazy = false
+    }
 }

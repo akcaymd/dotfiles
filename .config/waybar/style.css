@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-    font-family: "FiraCode Nerd Font", Arial, "Font Awesome 5 Free"; 
+    font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", Arial, "Font Awesome 5 Free"; 
 }
 
 window#waybar {

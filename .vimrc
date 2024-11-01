@@ -1,3 +1,5 @@
+packloadall
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -72,4 +74,16 @@ set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+call plug#begin()
+
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+call plug#end()
 

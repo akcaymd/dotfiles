@@ -81,10 +81,12 @@ final_space = true
     newline = true
 
     [[blocks.segments]]
-        type = 'text'
+        type = 'path'
         style = 'plain'
-        foreground = 'p:maroon'
-        template = '> '
+        background = "transparent"
+        foreground = 'p:red'
+        template = "<p:red>└</>"
+
 
 [palette]
   rosewater = '#f5e0dc'
