@@ -12,3 +12,6 @@
 - oh-my-posh
 - wlogout
 - clipman
+- blueman
+- network-manager-applet
+- wlsunset
