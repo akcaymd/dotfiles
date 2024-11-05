@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/furkan/dotfiles/.config/ohmyposh'
 let g:netrw_dirhist_5='/home/furkan/.config/qt6ct/colors'
 let g:netrw_dirhist_4='/home/furkan/dotfiles/.config/swaync'
 let g:netrw_dirhist_3='/home/furkan/.config/kitty'

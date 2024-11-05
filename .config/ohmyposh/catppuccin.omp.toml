@@ -11,7 +11,7 @@ final_space = true
     style = 'diamond'
     powerline_symbol = ''
     leading_diamond = ''
-    template = '{{.Icon}} '
+    template = '> '
     background = 'p:red'
     foreground = 'p:base'
 

@@ -23,7 +23,7 @@
         //"backlight",
         "pulseaudio",
         "bluetooth",
-        "network",
+        //"network",
         "battery",
         "custom/weather",
         "clock",
@@ -79,7 +79,6 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "network#netspeed": {
         //"format": "{bandwidthDownBytes} {bandwidthUpBytes}",
@@ -193,7 +192,8 @@
         "format-connected": " {num_connections}",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} device connected.\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": " - {device_alias}\n   {device_battery_percentage}%"
+        "tooltip-format-enumerate-connected": " - {device_alias}\n   {device_battery_percentage}%",
+        "on-click": "blueman-manager"
     },
     "custom/weather": {
         "format": "{}°",
