@@ -20,6 +20,7 @@
         "custom/prayerbar",
         "cpu",
         "memory",
+        "temperature",
         //"backlight",
         "pulseaudio",
         "bluetooth",
@@ -201,5 +202,12 @@
         "interval": 3600,
         "exec": "sh ~/.local/bin/wttrbar-custom.sh",
         "return-type": "json"
+    },
+     "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        // "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": " {temperatureC}°C"
     },
 }

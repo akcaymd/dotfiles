@@ -41,7 +41,8 @@ window#waybar.empty #window {
 #pulseaudio,
 #bluetooth,
 #battery,
-#custom-media {
+#custom-media,
+#temperature {
     padding: 0 8px;
 }
 
