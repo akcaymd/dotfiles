@@ -1,7 +1,7 @@
 import pytodotxt
 import json
 
-todotxt = pytodotxt.TodoTxt('/mnt/Data/IMF/todo.todotxt')
+todotxt = pytodotxt.TodoTxt('/home/furkan/IMF/todo.todotxt')
 todotxt.parse()
 
 count = len(todotxt.tasks)

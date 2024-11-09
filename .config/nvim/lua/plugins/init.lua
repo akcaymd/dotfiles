@@ -51,5 +51,9 @@ return {
     {
         'ThePrimeagen/vim-be-good',
         lazy = false
+    },
+    {
+        'freitass/todo.txt-vim',
+        lazy = false
     }
 }
