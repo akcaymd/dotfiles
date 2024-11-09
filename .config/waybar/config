@@ -209,9 +209,9 @@
     },
      "custom/todo": {
         // https://www.pedaldrivenprogramming.com/2023/09/simple-todo-app-waybar-hyprland/
-        "exec": "~/.config/waybar/scripts/todo.sh",
+        "exec": "python ~/.config/waybar/scripts/todo.py",
         "return-type": "json",
-        "format": "{} todos",
+        "format": "  {} todos",
         "on-click": "kitty nvim /mnt/Data/IMF/todo.todotxt",
         "interval": 5,
     }

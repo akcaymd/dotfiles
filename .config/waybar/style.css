@@ -83,6 +83,10 @@ window#waybar.empty #window {
     color: @blue;
 }
 
+#custom-todo {
+    color: @teal;
+}
+
 /* OTHER STYLES  */
 #tray > .passive {
     -gtk-icon-effect: dim;
