@@ -42,7 +42,8 @@ window#waybar.empty #window {
 #bluetooth,
 #battery,
 #custom-media,
-#temperature {
+#temperature,
+#custom-todo {
     padding: 0 8px;
 }
 
