@@ -79,6 +79,7 @@ call plug#begin()
 
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+Plug 'freitass/todo.txt-vim'
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
