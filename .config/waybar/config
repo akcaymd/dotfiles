@@ -212,7 +212,7 @@
         "exec": "python ~/.config/waybar/scripts/todo.py",
         "return-type": "json",
         "format": "  {} todos",
-        "on-click": "kitty nvim /mnt/Data/IMF/todo.todotxt",
+        "on-click": "kitty nvim ~/IMF/todo.todotxt",
         "interval": 5,
     }
 }
