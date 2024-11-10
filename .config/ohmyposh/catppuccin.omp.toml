@@ -1,5 +1,33 @@
-version = 2
+version = 3
 final_space = true
+
+[palette]
+  base = '#1e1e2e'
+  blue = '#89b4fa'
+  crust = '#11111b'
+  flamingo = '#f2cdcd'
+  green = '#a6e3a1'
+  lavender = '#b4befe'
+  mantle = '#181825'
+  maroon = '#eba0ac'
+  mauve = '#cba6f7'
+  overlay0 = '#6c7086'
+  overlay1 = '#7f849c'
+  overlay2 = '#9399b2'
+  peach = '#fab387'
+  pink = '#f5c2e7'
+  red = '#f38ba8'
+  rosewater = '#f5e0dc'
+  sapphire = '#74c7ec'
+  sky = '#89dceb'
+  subtext0 = '#a6adc8'
+  subtext1 = '#bac2de'
+  surface0 = '#313244'
+  surface1 = '#45475a'
+  surface2 = '#585b70'
+  teal = '#94e2d5'
+  text = '#cdd6f4'
+  yellow = '#f9e2af'
 
 [[blocks]]
   type = 'prompt'
@@ -7,29 +35,29 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    type = 'os'
     style = 'diamond'
-    powerline_symbol = ''
     leading_diamond = ''
     template = '{{.Icon}} '
-    background = 'p:red'
     foreground = 'p:base'
+    powerline_symbol = ''
+    background = 'p:red'
+    type = 'os'
 
   [[blocks.segments]]
-    type = 'session'
     style = 'diamond'
-    powerline_symbol = ''
     template = '<b>{{ .UserName }}@{{ .HostName }}</b>'
-    background = 'p:red'
     foreground = 'p:base'
+    powerline_symbol = ''
+    background = 'p:red'
+    type = 'session'
 
   [[blocks.segments]]
-    type = 'path'
     style = 'powerline'
-    powerline_symbol = ''
     template = ' {{ .Path }}'
-    background = 'p:pink'
     foreground = 'p:base'
+    powerline_symbol = ''
+    background = 'p:pink'
+    type = 'path'
 
     [blocks.segments.properties]
       folder_icon = '....'
@@ -37,12 +65,12 @@ final_space = true
       style = 'agnoster_short'
 
   [[blocks.segments]]
-    type = 'git'
     style = 'powerline'
-    powerline_symbol = ''
     template = ' {{ .HEAD }}'
-    background = 'p:lavender'
     foreground = 'p:base'
+    powerline_symbol = ''
+    background = 'p:lavender'
+    type = 'git'
 
     [blocks.segments.properties]
       branch_icon = ' '
@@ -56,64 +84,27 @@ final_space = true
       revert_icon = ' '
       tag_icon = ' '
 
-    
 [[blocks]]
-    type = 'prompt'
-    alignment = 'right'
-    overflow = 'hidden'
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hidden'
 
-    [[blocks.segments]]
-        type = "executiontime"
-        style = "powerline"
-        powerline_symbol = ""
-        foreground = "p:yellow"
-        background = "transparent"
-        template = "{{ .FormattedMs }}"
-        
-        [block.properties]
-            threshold = 500
-            style = "austin"
-            always_enabled = true
+  [[blocks.segments]]
+    style = 'powerline'
+    template = '{{ .FormattedMs }}'
+    foreground = 'p:yellow'
+    powerline_symbol = ''
+    background = 'transparent'
+    type = 'executiontime'
 
 [[blocks]]
-    type = 'prompt'
-    alignment = 'left'
-    newline = true
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
 
-    [[blocks.segments]]
-        type = 'path'
-        style = 'plain'
-        background = "transparent"
-        foreground = 'p:red'
-        template = "<p:red>└</>"
-
-
-[palette]
-  rosewater = '#f5e0dc'
-  flamingo = '#f2cdcd'
-  pink = '#f5c2e7'
-  mauve = '#cba6f7'
-  red = '#f38ba8'
-  maroon = '#eba0ac'
-  peach = '#fab387'
-  yellow = '#f9e2af'
-  green = '#a6e3a1'
-  teal = '#94e2d5'
-  sky = '#89dceb'
-  sapphire = '#74c7ec'
-  blue = '#89b4fa'
-  lavender = '#b4befe'
-  text = '#cdd6f4'
-  subtext1 = '#bac2de'
-  subtext0 = '#a6adc8'
-  overlay2 = '#9399b2'
-  overlay1 = '#7f849c'
-  overlay0 = '#6c7086'
-  surface2 = '#585b70'
-  surface1 = '#45475a'
-  surface0 = '#313244'
-  base = '#1e1e2e'
-  mantle = '#181825'
-  crust = '#11111b'
-  
- 
+  [[blocks.segments]]
+    style = 'plain'
+    template = '<p:red>└</>'
+    foreground = 'p:red'
+    background = 'transparent'
+    type = 'path'
