@@ -45,7 +45,16 @@
         "format": "  {:%H:%M}",
         //"format": "{:%H:%M}",
         "format-alt": "  {:%d %B %Y  %A}",
-        "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left",
+            "format": {
+                "weeks": "<span color='#f38ba8'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            },
+            "on-scroll": 1,
+        }
     },
     "cpu": {
         "format": " {usage}%",
@@ -111,16 +120,9 @@
         "sort-by-number": true,
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-        //"persistent-workspaces": {
-        //    "eDP-1": [
-        //        1,
-        //        2
-        //    ],
-        //    "HDMI-A-1": [
-        //        3,
-        //        4
-        //   ]
-        //}
+        "persistent-workspaces": {
+            "*": [1,2,3,4]
+        }
     },
     "tray": {
         "spacing": 10

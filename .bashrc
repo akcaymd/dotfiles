@@ -26,3 +26,6 @@ unset rc
 
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin.omp.toml)"
 eval "$(zoxide init bash)"
+
+alias waybar-reload="pkill waybar && hyprctl dispatch exec waybar"
+alias waybar-start="hyprctl dispatch exec waybar"
