@@ -29,3 +29,8 @@ eval "$(zoxide init bash)"
 
 alias waybar-reload="pkill waybar && hyprctl dispatch exec waybar"
 alias waybar-start="hyprctl dispatch exec waybar"
+alias lofi="mpv https://youtu.be/jfKfPfyJRdk --no-video"
+alias codium="flatpak run com.vscodium.codium"
+alias obsidian="cd ~/IMF && nvim ."
+alias ytwatchlist="sh watchlater/youtube-watchlist-cli.sh"
+alias ytwatchlater="sh watchlater/youtube-watchlist-cli.sh ~/Downloads/youtube-watchlater.json"

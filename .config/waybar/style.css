@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  background-color: @base;
+    background-color: @base;
   color: @text;
 }
 

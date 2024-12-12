@@ -15,7 +15,7 @@ def due(text):
         due_date_str = match.group(0)
     
         # Convert the date string into a datetime object
-        due_date = datetime.strptime(due_date_str, "%Y-%m-%d").date()
+        due_date: datetime.date= datetime.strptime(due_date_str, "%Y-%m-%d").date()
         
         return due_date
 
@@ -23,14 +23,25 @@ todotxt = pytodotxt.TodoTxt(todotxt_file)
 todotxt.parse()
 
 total_count = len(todotxt.tasks)
-todos = "Today:\n"
+due_today = ""
+due_over = ""
 count = 0
 
 for task in todotxt.tasks:
-    if not task.is_completed and today == due(task.description):
-        todos += "- " + task.description + "\n"
+    if due(task.description) == None:
+        continue
+    
+    if not task.is_completed:
         count += 1
         
+        if today == due(task.description):
+            due_today += "- " + task.description + "\n"
+        
+        if today >= due(task.description):
+            due_over += "- " + task.description + "\n"
+
+todos = f"Today:\n{due_today}\nOverdue:\n{due_over}"
+
 output = {"text": count, "tooltip": todos}
 
 sys.stdout.write(json.dumps(output))

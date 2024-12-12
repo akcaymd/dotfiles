@@ -14,7 +14,8 @@ declare -A SITES
 SITE_TO_USE=""
 
 CACHE_DIR="$HOME/.cache/stevenliebregt/rofi-scripts/web-search"
-BROWSER="firefox"
+#BROWSER="firefox"
+BROWSER="flatpak run io.github.zen_browser.zen"
 
 SITES=(
     ["google"]="https://www.google.com/search?q="

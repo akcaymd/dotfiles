@@ -12,7 +12,7 @@
     ],
     "modules-right": [
         "network#netspeed",
-        "custom/todo",
+        //"custom/todo",
         "tray",
         "custom/prayerbar",
         "cpu",
@@ -45,15 +45,13 @@
         "format": "  {:%H:%M}",
         //"format": "{:%H:%M}",
         "format-alt": "  {:%d %B %Y  %A}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
-            "mode": "month",
             "weeks-pos": "left",
             "format": {
                 "weeks": "<span color='#f38ba8'><b>{}</b></span>",
-                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
-            },
-            "on-scroll": 1,
+                                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
         }
     },
     "cpu": {
