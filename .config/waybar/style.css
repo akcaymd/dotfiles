@@ -1,114 +1,207 @@
 @import "mocha.css";
 
+/*
+inspired from https://github.com/MrSom3body/dotfiles
+*/
+
+@define-color base00 @mantle;
+@define-color base01 @surface0;
+@define-color base02 @surface0;
+@define-color base03 blue;
+@define-color base04 blue;
+@define-color base05 @text;
+@define-color base06 blue;
+@define-color base07 blue;
+@define-color base08 @red;
+@define-color base09 @yellow;
+@define-color base0A @overlay0;
+@define-color base0B @yellow;
+@define-color base0C @lavender;
+@define-color base0D @blue;
+@define-color base0E blue;
+@define-color base0F blue;
+
 * {
-    font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", Arial, "Font Awesome 5 Free"; 
+    padding: 0;
+    margin: 0;
+    font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", Arial, "Font Awesome 5 Free";
 }
 
 window#waybar {
-    background-color: @base;
-  color: @text;
+    background: alpha(@base00, 0.8);
+    transition: all 0.3s ease-in-out;
 }
 
-window#waybar.empty #window {
-    background-color: transparent;
-    box-shadow: none;
+.module,
+#hardware,
+#location,
+#settings {
+    color: @base05;
+    background: transparent;
+    border-radius: 15px;
+
+    padding: 0.2em 0.8em;
+    margin: 0.4em 0.2em;
+}
+
+.modules-left:first-child {
+    margin-left: 0.2em;
+}
+
+.modules-right:last-child {
+    margin-right: 0.2em;
+}
+
+tooltip {
+    background: @base00;
+    border: 3px solid @base0D;
+
+    border-radius: 15px;
+}
+
+tooltip label {
+    color: @base05;
+
+    padding: 0.2em 0.5em;
+}
+
+#custom-actions {
+    font-size: 1.3em;
+    color: @base05;
+    padding: 0.2rem 0.5rem;
 }
 
 #workspaces {
-    padding: 0 4px;
+    background: @base01;
+}
+
+#workspaces button {
+    color: @base05;
+
+    border-radius: 15px;
+
+    padding: 0.05em;
+    margin: 0.2em 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspace button:first-child {
+    margin: 0.2em 0.3em 0.2em 0px;
+}
+
+#workspace button:last-child {
+    margin: 0.2em 0px 0.2em 0.3em;
 }
 
 #workspaces button.active {
-    color: @red;
+    color: @base00;
+    background: @base0D;
+
+    min-width: 3em;
 }
 
-.modules-right,
-.modules-left,
-.modules-center {
-    background-color: @surface0;
-    margin: 6px;
-    border-radius: 8px;
+#workspaces button.special {
+    color: @base00;
+    background: @base0D;
 }
 
-#window,
-#clock,
-#custom-weather,
-#network,
-#tray,
-#custom-prayerbar,
-#cpu,
-#memory,
-#pulseaudio,
-#bluetooth,
-#battery,
-#custom-media,
-#temperature,
-#custom-todo {
-    padding: 0 8px;
+window#waybar.empty #window {
+    background: transparent;
 }
 
-#window {
-    color: @teal;
+#mpris {
+    color: @base00;
+    background: @base0C;
 }
 
-#custom-media {
-    color: @blue;
+#mpris.paused {
+    color: @base05;
+    background: @base01;
 }
 
-#clock {
-    color: @teal;
+#pulseaudio.muted {
+    color: @base00;
+    background: @base0A;
 }
 
-#network {
-    color: @yellow;
+#battery.warning {
+    color: @base00;
+    background: @base0A;
 }
 
-#custom-prayerbar {
-    color: @green;
+#battery.charging,
+#battery.plugged {
+    color: @base00;
+    background: @base0B;
 }
 
-#cpu {
-    color: @red;
-}
-
-#memory {
-    color: @sapphire;
-}
-
-#pulseaudio {
-    color: @flamingo;
-}
-
-#bluetooth{
-    color: @blue;
-}
-
-#custom-todo {
-    color: @teal;
-}
-
-/* OTHER STYLES  */
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @red;
-    border: 0;
-}
-
-#battery.charging, #battery.plugged {
-    color: @base;
-    background-color: @text;
+@keyframes blink {
+    to {
+        color: @base05;
+        background: @base01;
+    }
 }
 
 #battery.critical:not(.charging) {
-    background-color: @red;
-    color: @base;
+    background-color: @base08;
     animation-name: blink;
     animation-duration: 0.5s;
-    animation-timing-function: steps(12);
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    color: @base00;
+}
+
+#power-profiles-daemon.performance {
+    background: @base08;
+}
+
+#power-profiles-daemon.balanced {
+    background: @base0B;
+}
+
+#power-profiles-daemon.power-saver {
+    background: @base0D;
+}
+
+#idle_inhibitor {
+    background: @base02;
+}
+
+#idle_inhibitor.activated {
+    color: @base00;
+    background: @base09;
+}
+
+#temperature.critical {
+    color: @base08;
+}
+
+#tray {
+    background: @base02;
+}
+
+#tray menu,
+#tray menuitem {
+    padding: 0.25em;
+    margin: 0.1em;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @base0A;
+}
+
+#hardware,
+#settings,
+#location,
+#clock {
+    background: @surface0;
 }

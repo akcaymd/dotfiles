@@ -1,0 +1,115 @@
+@import "mocha.css";
+
+* {
+    font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", Arial, "Font Awesome 5 Free";
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button.active {
+    color: @red;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+    background-color: @surface0;
+    margin: 6px;
+    border-radius: 8px;
+}
+
+#window,
+#clock,
+#custom-weather,
+#network,
+#tray,
+#custom-prayerbar,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#battery,
+#custom-media,
+#temperature,
+#custom-todo {
+    padding: 0 8px;
+}
+
+#window {
+    color: @teal;
+}
+
+#custom-media {
+    color: @blue;
+}
+
+#clock {
+    color: @teal;
+}
+
+#network {
+    color: @yellow;
+}
+
+#custom-prayerbar {
+    color: @green;
+}
+
+#cpu {
+    color: @red;
+}
+
+#memory {
+    color: @sapphire;
+}
+
+#pulseaudio {
+    color: @flamingo;
+}
+
+#bluetooth {
+    color: @blue;
+}
+
+#custom-todo {
+    color: @teal;
+}
+
+/* OTHER STYLES  */
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+    border: 0;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @base;
+    background-color: @text;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @base;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

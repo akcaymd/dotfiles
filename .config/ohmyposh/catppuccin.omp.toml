@@ -40,7 +40,7 @@ final_space = true
     template = '{{.Icon}} '
     foreground = 'p:base'
     powerline_symbol = ''
-    background = 'p:red'
+    background = 'p:blue'
     type = 'os'
 
   [[blocks.segments]]
@@ -48,7 +48,7 @@ final_space = true
     template = '<b>{{ .UserName }}@{{ .HostName }}</b>'
     foreground = 'p:base'
     powerline_symbol = ''
-    background = 'p:red'
+    background = 'p:blue'
     type = 'session'
 
   [[blocks.segments]]
@@ -56,7 +56,7 @@ final_space = true
     template = ' {{ .Path }}'
     foreground = 'p:base'
     powerline_symbol = ''
-    background = 'p:pink'
+    background = 'p:lavender'
     type = 'path'
 
     [blocks.segments.properties]
@@ -104,7 +104,7 @@ final_space = true
 
   [[blocks.segments]]
     style = 'plain'
-    template = '<p:red>└</>'
-    foreground = 'p:red'
+    template = '<p:blue>└</>'
+    foreground = 'p:blue'
     background = 'transparent'
     type = 'path'

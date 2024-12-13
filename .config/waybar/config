@@ -4,27 +4,19 @@
     "layer": "top",
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode",
         "hyprland/window",
     ],
     "modules-center": [
-        "custom/media",
+        "mpris"
     ],
     "modules-right": [
-        "network#netspeed",
+        "group/hardware",
         //"custom/todo",
+        "group/location",
         "tray",
-        "custom/prayerbar",
-        "cpu",
-        "memory",
-        "temperature",
         //"backlight",
-        "pulseaudio",
-        "bluetooth",
-        //"network",
-        "battery",
-        "custom/weather",
-        "clock",
+        "group/settings",
+        "clock"
     ],
     "hyprland/window": {
         "format": "{title}",
@@ -43,14 +35,14 @@
     },
     "clock": {
         "format": "  {:%H:%M}",
-        //"format": "{:%H:%M}",
+        //"format": "  {:%a %d %b %H:%M}",
         "format-alt": "  {:%d %B %Y  %A}",
         "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "weeks-pos": "left",
             "format": {
-                "weeks": "<span color='#f38ba8'><b>{}</b></span>",
-                                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                "weeks": "<span color='#89b4fa'><b>{}</b></span>",
+                "today": "<span color='#89b4fa'><b><u>{}</u></b></span>"
             }
         }
     },
@@ -87,10 +79,10 @@
     },
     "network#netspeed": {
         //"format": "{bandwidthDownBytes} {bandwidthUpBytes}",
-        "format": "{bandwidthDownBytes}",
-        "interval": 2,
+        "format": " {bandwidthDownBytes}",
+        "interval": 4,
         "tooltip": true,
-        "tooltip-format": "Down: {bandwidthDownBytes}\nUp: {bandwidthUpBytes}"
+        "tooltip-format": "Download: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -119,7 +111,12 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "persistent-workspaces": {
-            "*": [1,2,3,4]
+            "*": [
+                1,
+                2,
+                3,
+                4
+            ]
         }
     },
     "tray": {
@@ -197,22 +194,62 @@
         "format": "{}°",
         "tooltip": true,
         "interval": 3600,
-        "exec": "sh ~/.local/bin/wttrbar-custom.sh",
+        "exec": "sh ~/.group/hardwareocal/bin/wttrbar-custom.sh",
         "return-type": "json"
     },
-     "temperature": {
+    "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "critical-threshold": 80,
         "format-critical": " {temperatureC}°C",
         "format": " {temperatureC}°C",
-        "tooltip-format": "CPU Temp" 
+        "tooltip-format": "CPU Temp"
     },
-     "custom/todo": {
+    "custom/todo": {
         // https://www.pedaldrivenprogramming.com/2023/09/simple-todo-app-waybar-hyprland/
         "exec": "python ~/.config/waybar/scripts/todo.py",
         "return-type": "json",
         "format": "  {} todos",
         "on-click": "kitty nvim ~/IMF/todo.todotxt",
         "interval": 5,
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "network#netspeed",
+            "cpu",
+            "memory",
+            "temperature",
+        ]
+    },
+    "group/location": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/prayerbar",
+            "custom/weather",
+        ]
+    },
+    "group/settings": {
+        "orientation": "horizontal",
+        "modules": [
+            "privacy",
+            "pulseaudio",
+            "bluetooth",
+            "battery",
+        ]
+    },
+    "mpris": {
+        "format": "{player_icon} {status_icon} <b>{title}</b> by <i>{artist}</i>",
+        "tooltip-format": "Album: {album}",
+        "artist-len": 22,
+        "title-len": 22,
+        "ellipsis": "...",
+        "player-icons": {
+            "default": "",
+            "spotify": "󰓇",
+            "kdeconnect": ""
+        },
+        "status-icons": {
+            "paused": "󰏤"
+        },
     }
 }
