@@ -23,7 +23,7 @@
 1. Download required packages:
 
 ```
-sudo dnf install stow hyprland hyprpaper mako rofi-wayland waybar vim neovim kitty wlogout clipman blueman wlsunset kanshi
+sudo dnf install git stow hyprland hyprpaper mako rofi-wayland waybar vim neovim kitty wlogout clipman blueman wlsunset kanshi
 ```
 
 Install [oh-my-posh](https://ohmyposh.dev/docs/installation/linux)
