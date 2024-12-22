@@ -80,7 +80,7 @@ tooltip label {
 
     border-radius: 15px;
 
-    padding: 0.05em;
+    padding: 0 0.7em 0 0.5em;
     margin: 0.2em 0.3em;
     transition: all 0.3s ease-in-out;
 }
@@ -204,4 +204,8 @@ window#waybar.empty #window {
 #location,
 #clock {
     background: @surface0;
+}
+
+#privacy {
+    padding: 0.2em 0.8em;
 }

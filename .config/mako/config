@@ -6,7 +6,7 @@ text-color=#cdd6f4
 border-color=#89b4fa
 progress-color=over #313244
 border-radius=12
-padding=20
+padding=15
 
 [urgency=high]
 border-color=#89b4fa
