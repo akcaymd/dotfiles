@@ -1,39 +1,64 @@
+/* Adwaita Dark Colors Used:
+ * Primary Background: #242424 (Gnome Dark Base)
+ * Secondary Background: #303030 (Slightly lighter dark color)
+ * Primary Text: #f8f8f8 (Adwaita White/Foreground)
+ * Border/Accent/Selected Background: #3584e4 (Adwaita Blue/Accent)
+ * Selected Text: #ffffff (Pure White for contrast on blue)
+ */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 window {
-margin: 0px;
-border: 1px solid #f38ba8;
-background-color: #1e1e2e;
+  background-color: transparent;
 }
 
 #input {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-background-color: #313244;
+  margin: 5px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+#input image {
+  color: #f8f8f8;
 }
 
 #inner-box {
-margin: 5px;
-border: none;
-background-color:#1e1e2e;
+  margin: 5px;
+  border: none;
+  background-color: transparent;
 }
 
 #outer-box {
-margin: 5px;
-border: none;
-background-color: #1e1e2e;
+  margin: 12px;
+  padding: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  background-color: #242424;
 }
 
 #scroll {
-margin: 0px;
-border: none;
+  margin: 0px;
+  border: none;
 }
 
 #text {
-margin: 5px;
-border: none;
-color: #cdd6f4;
-} 
+  margin: 5px;
+  border: none;
+  color: #f8f8f8;
+}
 
 #entry:selected {
-background-color: #313244;
+  background-color: #ffffff;
+  font-weight: normal;
+  border-radius: 12px;
+}
+
+#text:selected {
+  color: #242424;
+  font-weight: normal;
 }

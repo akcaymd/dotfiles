@@ -1,90 +1,60 @@
 packloadall
 
-" Disable compatibility with vi which can cause unexpected issues.
+set encoding=UTF-8
 set nocompatible
-
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
-
-" Enable plugins and load plugin for the detected file type.
 filetype plugin on
-
-" Load an indent file for the detected file type.
 filetype indent on
-
-" Turn syntax highlighting on.
 syntax on
-
-" Add numbers to each line on the left-hand side.
 set number relativenumber
-
-" Set shift width to 4 spaces.
-set shiftwidth=4
-
-" Set tab width to 4 columns.
 set tabstop=4
-
-" Use space characters instead of tabs.
 set expandtab
-
 set autoindent
 set smartindent
 set expandtab 
 set smarttab
 set softtabstop=4
-
-" Do not save backup files.
+set expandtab
+set tabstop=4
+set shiftwidth=4
 set nobackup
-
-" Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
-
-
-" While searching though a file incrementally highlight matching characters as you type.
 set incsearch
-
-" Ignore capital letters during search.
 set ignorecase
-
-" Override the ignorecase option if searching for capital letters.
-" This will allow you to search specifically for capital letters.
 set smartcase
-
-" Show partial command you type in the last line of the screen.
 set showcmd
-
-" Show the mode you are on the last line.
-set showmode
-
-" Show matching words during a search.
+set noshowmode
 set showmatch
-
-" Use highlighting when doing a search.
 set hlsearch
-
-" Set the commands to save in history default number is 20.
 set history=1000
-
-" Enable auto completion menu after pressing TAB.
 set wildmenu
-
-" Make wildmenu behave like similar to Bash completion.
 set wildmode=list:longest
-
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set nofoldenable
+
+set laststatus=2
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 call plug#begin()
-
-Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
-Plug 'freitass/todo.txt-vim'
-
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-
+  Plug 'sheerun/vim-polyglot'
+  Plug 'godlygeek/tabular'
+  Plug 'preservim/vim-markdown'
+  Plug 'preservim/nerdtree'
+  Plug 'itchyny/lightline.vim'
+  Plug 'junegunn/goyo.vim'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/vim-emoji'
+  Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+ 
+  Plug 'jceb/vim-orgmode'
+  Plug 'tpope/vim-speeddating'
 call plug#end()
+
+let mapleader = " "
+nnoremap <leader>n :NERDTreeToggle<cr>
+let g:prettier#autoformat = 1
 

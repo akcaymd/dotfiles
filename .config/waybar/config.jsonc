@@ -1,0 +1,162 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "width": 1700,
+  "margin-top": 5,
+  "margin-bottom": -5,
+  "modules-left": [
+    "custom/logo",
+    "sway/workspaces",
+    "sway/scratchpad"
+  ],
+  "modules-center": [
+    "clock#date",
+    "clock",
+    "custom/weather"
+  ],
+  "modules-right": [
+    "keyboard-state",
+    "custom/prayerbar",
+    "cpu",
+    "memory",
+    "disk",
+    "pulseaudio",
+    "bluetooth",
+    "tray",
+    "custom/power"
+  ],
+  "custom/logo": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "wofi -a --show drun"
+  },
+  "custom/separator": {
+    "format": "|"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "󰋊 {percentage_used}%",
+    "tooltip-format": "{used}/{total}"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "tooltip-format": "{usage}%",
+    "on-click": "swaymsg exec gnome-system-monitor"
+  },
+  "sway/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "sway/scratchpad": {
+    "format": " {count}",
+    "show-empty": false,
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "clock#date": {
+    // "format": "󰸗 {:%a %b %d}",
+    "format": "{:%a %b %d}",
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "swaymsg exec gnome-calendar"
+  },
+  "clock": {
+    // "format": "󰥔 {:%I:%M %p}",
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": false,
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-discharging": " {capacity}%",
+    "format-critical": "  {capacity}% (Critical!!)",
+    "format-charging-warning": " {capacity}%",
+    "format-charging-critical": " {capacity}%",
+    "format-discharging-critical": "  {capacity}% (critical!!)",
+    "tooltip-format": "{time} remaining",
+    "tooltip-format-charging": "{time} until full",
+    "tooltip-format-discharging": "{time} remaining",
+    "on-click": "swaymsg exec gnome-control-center power"
+  },
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": " M",
+    "tooltip-format": "{desc}"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "scroll-step": 5,
+    "format": " {percent}%",
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 1,
+    "format": " {}%",
+    "tooltip-format": "{used}/{total} GiB",
+    "on-click": "swaymsg exec flatpak run io.missioncenter.MissionCenter"
+  },
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+  "custom/prayerbar": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 60,
+    "exec": "/home/furkan/codes/PrayerTimes/prayer /home/furkan/codes/PrayerTimes/prayer-times.csv waybar",
+    "return-type": "json",
+  },
+  "bluetooth": {
+	"format": " {status}",
+	"format-disabled": "", 
+	"format-connected": " {num_connections}",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "swaymsg exec blueman-manager"
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Milas --nerd --hide-conditions",
+    "return-type": "json",
+    "on-click": "swaymsg exec gnome-weather"
+  },
+  "custom/gpu": {
+    "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+    "format": "GPU:{}%",
+    "return-type": "",
+    "interval": 1
+  },
+  "keyboard-state": {
+    // if not work please read https://github.com/Alexays/Waybar/wiki/Module:-Keyboard-State
+    "numlock": false,
+    "capslock": true,
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "CAPSLOCK",
+      "unlocked": ""
+    }
+  } 
+}

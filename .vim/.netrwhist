@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/furkan/.config/autostart'
 let g:netrw_dirhist_7='/home/furkan/.var/app/io.github.zen_browser.zen/.zen/aeassifm.Default (alpha)/chrome/zen-themes'
 let g:netrw_dirhist_6='/home/furkan/dotfiles/.config/ohmyposh'
 let g:netrw_dirhist_5='/home/furkan/.config/qt6ct/colors'
