@@ -23,6 +23,8 @@ exec flatpak run com.valvesoftware.Steam -silent
 exec flatpak run com.heroicgameslauncher.hgl
 exec nm-applet --indicator
 exec mako
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
 
 #
 # Output configuration

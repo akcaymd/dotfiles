@@ -162,4 +162,5 @@ bindsym $mod+r mode "resize"
     bindsym $mod+n exec wlsunset -T 6500
     bindsym $mod+Shift+n exec pkill wlsunset
 
-    bindsym $mod+Mod1+s exec grimshot --notify copy area - | flatpak run be.alexandervanhee.gradia -
+    # clipboard
+    bindsym $mod+Shift+v exec nwg-clipman
