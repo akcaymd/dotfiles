@@ -29,7 +29,7 @@ exec wl-paste --type image --watch cliphist store
 #
 # Output configuration
 #
-output * bg /home/furkan/Pictures/background.jpeg fill
+output * bg /home/furkan/.config/background fill
 output DP-1 resolution 2560x1440@165Hz position 0,0
 
 #
@@ -37,6 +37,16 @@ output DP-1 resolution 2560x1440@165Hz position 0,0
 #
 input type:keyboard {
     xkb_layout "tr",
+}
+
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    click_method clickfinger
+    natural_scroll enabled
+    dwt enabled
+    accel_profile adaptive
+    pointer_accel 0.3
 }
 
 #
