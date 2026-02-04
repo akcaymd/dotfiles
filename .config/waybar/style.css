@@ -55,7 +55,8 @@
 #bluetooth,
 #network,
 #custom-weather,
-#keyboard-state {
+#keyboard-state,
+#power-profiles-daemon {
   min-width: 12px;
   margin: 0 7.5px;
 }

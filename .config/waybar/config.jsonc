@@ -16,6 +16,7 @@
     "custom/weather"
   ],
   "modules-right": [
+    "power-profiles-daemon",
     "keyboard-state",
     "custom/prayerbar",
     "cpu",
@@ -139,7 +140,7 @@
     "format": "{}°",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar --location Milas --nerd --hide-conditions",
+    "exec": "sh /home/furkan/.config/waybar/wttr.sh",
     "return-type": "json",
     "on-click": "swaymsg exec gnome-weather"
   },
@@ -158,5 +159,16 @@
       "locked": "CAPSLOCK",
       "unlocked": ""
     }
-  } 
+  },
+  "power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+}
 }
