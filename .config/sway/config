@@ -32,6 +32,9 @@ exec wl-paste --type image --watch cliphist store
 output * bg /home/furkan/.config/background fill
 output DP-1 resolution 2560x1440@165Hz position 0,0
 
+output HDMI-A-1 resolution 2560x1440@165Hz position 0,0
+output eDP-1 resolution 1920x1080@60Hz position 320,1440
+
 #
 # Input configuration
 #

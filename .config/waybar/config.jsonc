@@ -16,15 +16,16 @@
     "custom/weather"
   ],
   "modules-right": [
-    "power-profiles-daemon",
     "keyboard-state",
     "custom/prayerbar",
-    "cpu",
+    "network#netspeed",
     "memory",
-    "disk",
     "pulseaudio",
+    "backlight",
     "bluetooth",
     "tray",
+    "battery",
+    "power-profiles-daemon",
     "custom/power"
   ],
   "custom/logo": {
@@ -140,7 +141,7 @@
     "format": "{}°",
     "tooltip": true,
     "interval": 3600,
-    "exec": "sh /home/furkan/.config/waybar/wttr.sh",
+    "exec": "wttrbar --nerd --hide-conditions",
     "return-type": "json",
     "on-click": "swaymsg exec gnome-weather"
   },
@@ -170,5 +171,12 @@
     "balanced": "",
     "power-saver": ""
   }
-}
+},
+    "network#netspeed": {
+        //"format": "{bandwidthDownBytes} {bandwidthUpBytes}",
+        "format": " {bandwidthDownBytes}",
+        "interval": 4,
+        "tooltip": true,
+        "tooltip-format": "Download: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}"
+    },
 }

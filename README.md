@@ -14,7 +14,7 @@ I am using this dotfiles with GNOME and Swaywm.
 ## Required packages
 
 ```
-stow swayfx waybar kitty wofi wlogout mako wlsunset vim network-manager-applet blueman starship grim nwg-clipman
+stow swayfx waybar kitty wofi wlogout mako wlsunset vim network-manager-applet blueman starship grim nwg-clipman eza fastfetch zoxide wttrbar gnome-system-monitor
 ```
 
 ## Installation
