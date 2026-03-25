@@ -22,7 +22,7 @@
 
 #waybar {
   background: rgba(0, 0, 0, 0.4);
-  border-radius: 0px;
+  border-radius: 120px;
 }
 
 #workspaces button {

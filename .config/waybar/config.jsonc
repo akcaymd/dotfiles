@@ -2,9 +2,8 @@
   "layer": "top",
   "position": "top",
   "height": 30,
-  "width": 1700,
-  "margin-top": 5,
-  "margin-bottom": -5,
+  "margin-top": 0,
+  "margin-bottom": 0,
   "modules-left": [
     "custom/logo",
     "sway/workspaces",

@@ -25,11 +25,12 @@ exec nm-applet --indicator
 exec mako
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
+exec qs -c noctalia-shell
 
 #
 # Output configuration
 #
-output * bg /home/furkan/.config/background fill
+#output * bg /home/furkan/.config/background fill
 output DP-1 resolution 2560x1440@165Hz position 0,0
 
 output HDMI-A-1 resolution 2560x1440@165Hz position 0,0
@@ -86,7 +87,7 @@ layer_effects "wofi" {
 }
 
 for_window [class=""] opacity 0.95
-for_window [title="Friends List"] floating enable
+for_window [title="Friends List" class="steam"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_role="Organizer"] floating enable
 for_window [window_role="Preferences"] floating enable
@@ -98,6 +99,8 @@ for_window [window_role="toolbox"] floating enable
 for_window [window_role="webconsole"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [title="Citation Dialog"] floating enable
+for_window [title="" app_id="Zotero"] floating enable
 
 #
 # THEME
@@ -108,7 +111,10 @@ include ~/.config/sway/colorschemes/monochrome
 # Status Bar:
 #
 bar {
-    swaybar_command waybar
+ #   swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
+
+include ~/.config/sway/noctalia
+
