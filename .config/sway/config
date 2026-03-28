@@ -30,7 +30,6 @@ exec qs -c noctalia-shell
 #
 # Output configuration
 #
-#output * bg /home/furkan/.config/background fill
 output DP-1 resolution 2560x1440@165Hz position 0,0
 
 output HDMI-A-1 resolution 2560x1440@165Hz position 0,0
@@ -57,11 +56,6 @@ input type:touchpad {
 # Keybindings
 #
 include ~/.config/sway/keybindings
-
-#
-# Customization
-#
-font pango:JetbrainsMono Nerd Font Bold 12
 
 gaps inner 5
 gaps outer 5
@@ -102,10 +96,6 @@ for_window [window_type="menu"] floating enable
 for_window [title="Citation Dialog"] floating enable
 for_window [title="" app_id="Zotero"] floating enable
 
-#
-# THEME
-#
-include ~/.config/sway/colorschemes/monochrome
 
 #
 # Status Bar:

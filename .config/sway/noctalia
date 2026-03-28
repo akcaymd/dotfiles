@@ -1,13 +1,13 @@
 ## Colours - Based on Material Design 3 Palette
-set $primary            #7aa2f7
-set $on_primary         #16161e
-set $secondary          #bb9af7
-set $tertiary           #9ece6a
-set $error              #f7768e
-set $surface            #1a1b26
-set $on_surface         #c0caf5
-set $on_surface_variant #9aa5ce
-set $outline            #586691
+set $primary            #3584e4
+set $on_primary         #ffffff
+set $secondary          #1b467c
+set $tertiary           #ffffff
+set $error              #c01c28
+set $surface            #242424
+set $on_surface         #ffffff
+set $on_surface_variant #ffffff
+set $outline            #726983
 
 ## Window Colours
 # class                 border    backgr.   text               indicator  child_border

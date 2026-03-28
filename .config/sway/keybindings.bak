@@ -3,25 +3,13 @@
 #
 # Basics:
 #
-set $ipc qs -c noctalia-shell ipc call
-
-# Core binds
-bindsym $mod+d exec $ipc launcher toggle
-bindsym $mod+s exec $ipc controlCenter toggle
-bindsym $mod+comma exec $ipc settings toggle
-
-# Media keys
-bindsym --locked XF86AudioRaiseVolume exec $ipc volume increase
-bindsym --locked XF86AudioLowerVolume exec $ipc volume decrease
-bindsym --locked XF86AudioMute exec $ipc volume muteOutput
-bindsym --locked XF86MonBrightnessUp exec $ipc brightness increase
-bindsym --locked XF86MonBrightnessDown exec $ipc brightness decrease
-
-
     bindsym $mod+c exec $term
 
     # Kill focused window
     bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -34,7 +22,8 @@ bindsym --locked XF86MonBrightnessDown exec $ipc brightness decrease
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec $ipc sessionMenu toggle
+    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec wlogout
 
 #
 # Moving around:
@@ -97,6 +86,8 @@ bindsym --locked XF86MonBrightnessDown exec $ipc brightness decrease
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -150,16 +141,26 @@ bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
     # Special key to take a screenshot with grim
     bindsym $mod+p       exec grimshot --notify save active
     bindsym $mod+Shift+p exec grimshot --notify copy area
     bindsym $mod+Mod1+p  exec grimshot --notify save output
     bindsym $mod+Ctrl+p  exec grimshot --notify save window
+    bindsym $mod+Shift+a exec flatpak run com.github.johnfactotum.QuickLookup --selection
 
     # nighlight
     bindsym $mod+n exec wlsunset -T 6500
     bindsym $mod+Shift+n exec pkill wlsunset
 
     # clipboard
-    bindsym $mod+Shift+v exec $ipc launcher clipboard
-
+    bindsym $mod+Shift+v exec nwg-clipman
